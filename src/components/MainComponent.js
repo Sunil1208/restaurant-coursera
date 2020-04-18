@@ -22,7 +22,6 @@ class Main extends Component {
         comments: dishId.comments
     })
 
-    console.log(`Comments : ${this.comments}`)
 }
 
   render(){
@@ -36,8 +35,9 @@ class Main extends Component {
       <Menu dishes={this.state.dishes}
         onClick={(dishId)=> this.onDishSelect(dishId)}/>
       <DishDetail 
+        key={this.dishId}
         dish={this.state.dishes.filter((dish)=>dish.id === this.state.selectedDish)[0]} 
-        comments={this.state.comments}/>
+        />
     </div>
   );
 }
